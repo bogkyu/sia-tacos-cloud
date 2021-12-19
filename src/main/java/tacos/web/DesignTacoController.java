@@ -52,5 +52,14 @@ public class DesignTacoController {
 	private Iterable<Ingredient> filterByType(List<Ingredient> ingredients, Type type) {
 		return ingredients.stream().filter(x -> x.getType().equals(type)).collect(Collectors.toList());
 	}
+	
+	@PostMapping
+	  public String processTaco(Taco taco) {
+	    // Save the taco...
+	    // We'll do this in chapter 3
+	    log.info("Processing taco: " + taco);
+
+	    return "redirect:/orders/current";
+	  }
 
 }
